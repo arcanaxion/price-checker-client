@@ -1,17 +1,34 @@
 import java.net.Socket
-import java.io.{DataInputStream, DataOutputStream}
+import java.io.{DataInputStream, DataOutputStream, ObjectInputStream}
+import scala.collection.mutable.ArrayBuffer
 
 object MainApp extends App {
     val clientSocket = new Socket("localhost", 5555)
 
-    val instream = clientSocket.getInputStream()
-    val outstream = clientSocket.getOutputStream()
+    val in = clientSocket.getInputStream()
+    val out = clientSocket.getOutputStream()
 
-    val dis = new DataInputStream(instream)
-    val dos = new DataOutputStream(outstream)
+    val dis = new DataInputStream(in)
+    val dos = new DataOutputStream(out)
+    val ois = new ObjectInputStream(in)
 
-    dos.writeBytes(s"${scala.io.StdIn.readLine("Enter your message: ")}\n")
+    val itemNames = ois.readObject().asInstanceOf[ArrayBuffer[String]]
+
+    println("List of item names: ")
+    for (name <- itemNames) {
+        println(name)
+    }
+
+    val input = scala.io.StdIn.readLine("Enter item name to check price: ")
+    dos.writeBytes(s"${input}\n")
+
     val data = dis.readLine()
 
-    println(s"Received data from server: ${data}")
+    try {
+        val price = data.toInt
+        println(s"Price of $input is RM${price/100.0}")
+    } catch {
+        case e: Exception => println(data)
+    }
+
 }
