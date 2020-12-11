@@ -1,8 +1,30 @@
+package priceChecker
+
 import java.net.Socket
 import java.io.{DataInputStream, DataOutputStream, ObjectInputStream}
 import scala.collection.mutable.ArrayBuffer
+import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
+import scalafx.scene.Scene
+import scalafxml.core.{FXMLLoader, NoDependencyResolver}
+import scalafx.Includes._
+import scalafx.scene.image.Image
 
-object MainApp extends App {
+object MainApp extends JFXApp {
+
+    // scalafx
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(getClass.getResourceAsStream("view/Home.fxml"))
+    val border: scalafx.scene.layout.BorderPane = loader.getRoot[javafx.scene.layout.BorderPane]()
+    val control = loader.getController[priceChecker.view.HomeController#Controller]()
+    stage = new PrimaryStage() {
+        title = "Price Checker"
+        scene = new Scene(){
+            root = border
+        }
+        icons += new Image(getClass.getResourceAsStream("/priceIcon.png"))
+    }
+
     while(true) {
         val clientSocket = new Socket("localhost", 5555)
 

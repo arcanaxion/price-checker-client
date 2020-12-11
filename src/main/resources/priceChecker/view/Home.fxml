@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="priceChecker.view.HomeController">
+   <center>
+      <SplitPane dividerPositions="0.7" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane>
+               <children>
+                  <Label layoutX="141.0" layoutY="51.0" text="Item Names" />
+                  <Button layoutX="135.0" layoutY="331.0" mnemonicParsing="false" onAction="#checkPrice" text="Check Price" />
+                  <ListView fx:id="itemNamesList" layoutX="73.0" layoutY="87.0" prefHeight="225.0" prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane>
+               <children>
+                  <Label layoutX="44.0" layoutY="126.0" text="Item Name" />
+                  <TextField fx:id="name" disable="true" layoutX="23.0" layoutY="152.0" prefHeight="25.0" prefWidth="101.0" />
+                  <Label layoutX="61.0" layoutY="224.0" text="Price" />
+                  <TextField fx:id="price" disable="true" layoutX="23.0" layoutY="248.0" prefHeight="25.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
