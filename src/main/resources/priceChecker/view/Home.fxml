@@ -22,9 +22,9 @@
           <AnchorPane>
                <children>
                   <Label layoutX="44.0" layoutY="126.0" text="Item Name" />
-                  <TextField fx:id="name" disable="true" layoutX="23.0" layoutY="152.0" prefHeight="25.0" prefWidth="101.0" />
                   <Label layoutX="61.0" layoutY="224.0" text="Price" />
-                  <TextField fx:id="price" disable="true" layoutX="23.0" layoutY="248.0" prefHeight="25.0" prefWidth="101.0" />
+                  <TextField fx:id="name" editable="false" layoutX="23.0" layoutY="152.0" prefHeight="25.0" prefWidth="101.0" />
+                  <TextField fx:id="price" editable="false" layoutX="24.0" layoutY="248.0" prefHeight="25.0" prefWidth="101.0" />
                </children>
             </AnchorPane>
         </items>
