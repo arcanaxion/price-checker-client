@@ -10,9 +10,8 @@ import scalafx.Includes._
 import priceChecker.MainApp
 
 @sfxml
-class HomeController(private val itemNamesList: ChoiceBox[String], private val price: TextField) {
-    
-    
+class HomeController(private val itemNamesList: ChoiceBox[String], 
+private val name: TextField, private val price: TextField) {
 
     def checkPrice(action: ActionEvent): Unit = {
         // get selected item name
@@ -23,7 +22,8 @@ class HomeController(private val itemNamesList: ChoiceBox[String], private val p
             // query server for item price
             val data = MainApp.queryPrice(iname)
 
-            // update price on client GUI
+            // update item name and price on client GUI
+            updateName(iname)
             updatePrice(data)
             
             // creates new socket
@@ -35,6 +35,10 @@ class HomeController(private val itemNamesList: ChoiceBox[String], private val p
         itemNamesList.items = new ObservableBuffer[String]() ++= itemNames
     }
     
+    def updateName(iname: String) {
+        name.text = iname
+    }
+
     def updatePrice(iprice: String) {
         price.text = iprice
     }

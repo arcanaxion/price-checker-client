@@ -55,7 +55,10 @@ object MainApp extends JFXApp {
             // third dollar sign is for the variable
             data = f"$$${price/100.0}%.2f"
         } catch {
-            case e: Exception => println(data)
+            // server responds with a string if an invalid item is queried
+            // this is not actually needed as it won't happen because the GUI only
+            // permits valid items
+            case e: Exception =>
         }
 
         return data
@@ -63,7 +66,7 @@ object MainApp extends JFXApp {
 
     // scalafx
     stage = new PrimaryStage() {
-        title = "Price Checker"
+        title = "Item Price Checker"
         scene = new Scene(){
             root = border
         }

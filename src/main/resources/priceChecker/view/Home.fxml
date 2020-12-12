@@ -11,17 +11,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="priceChecker.view.HomeController">
+<BorderPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="priceChecker.view.HomeController">
    <center>
       <SplitPane BorderPane.alignment="CENTER">
         <items>
           <AnchorPane prefHeight="398.0" prefWidth="604.0">
                <children>
-                  <TextField fx:id="price" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="266.0" layoutY="259.0" mouseTransparent="true" prefHeight="72.0" prefWidth="181.0" promptText="\$0.00" AnchorPane.rightAnchor="58.0">
+                  <TextField fx:id="price" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="261.0" layoutY="294.0" mouseTransparent="true" prefHeight="72.0" prefWidth="171.0" promptText="\$0.00" AnchorPane.rightAnchor="73.0">
                      <font>
                         <Font name="Verdana" size="24.0" />
                      </font></TextField>
-                  <Button defaultButton="true" layoutX="277.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#checkPrice" prefHeight="36.0" prefWidth="171.0" style="-fx-background-color: #517cc0;" text="Check Price" textAlignment="CENTER" textFill="#fffbfb" AnchorPane.rightAnchor="57.0">
+                  <Button defaultButton="true" layoutX="261.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#checkPrice" prefHeight="36.0" prefWidth="171.0" style="-fx-background-color: #517cc0;" text="Check Price" textAlignment="CENTER" textFill="#fffbfb" AnchorPane.rightAnchor="73.0">
                      <font>
                         <Font name="Verdana Bold" size="13.0" />
                      </font>
@@ -29,7 +29,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ChoiceBox fx:id="itemNamesList" layoutX="91.0" layoutY="124.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="356.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="58.0">
+                  <ChoiceBox fx:id="itemNamesList" layoutX="75.0" layoutY="124.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="356.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="74.0">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></ChoiceBox>
@@ -39,7 +39,17 @@
                         <Font name="Verdana Bold" size="28.0" />
                      </font>
                   </Text>
-                  <Text fx:id="name" fill="#282828" layoutX="91.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Price:" wrappingWidth="165.4365234375">
+                  <Text fill="#282828" layoutX="75.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Price:" wrappingWidth="165.4365234375" AnchorPane.rightAnchor="264.5634765625">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="name" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="261.0" layoutY="242.0" mouseTransparent="true" prefHeight="34.0" prefWidth="171.0" promptText="Item Name" AnchorPane.rightAnchor="73.0">
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </TextField>
+                  <Text fill="#282828" layoutX="74.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Name:" wrappingWidth="165.4365234375" AnchorPane.rightAnchor="265.126953125">
                      <font>
                         <Font size="17.0" />
                      </font>
