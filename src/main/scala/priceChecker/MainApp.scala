@@ -51,7 +51,9 @@ object MainApp extends JFXApp {
         try {
             val price = data.toInt
             // println(s"Price of $input is RM${price/100.0}")
-            data = (s"RM${price/100.0}")
+            // double dollar sign to print a single dollar sign
+            // third dollar sign is for the variable
+            data = f"$$${price/100.0}%.2f"
         } catch {
             case e: Exception => println(data)
         }
