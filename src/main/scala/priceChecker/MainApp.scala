@@ -25,6 +25,7 @@ object MainApp extends JFXApp {
     createNewSocket()
 
     def createNewSocket(): Unit = {
+        // replace localhost with IP of server
         val clientSocket = new Socket("localhost", 5555)
 
         val in = clientSocket.getInputStream()
